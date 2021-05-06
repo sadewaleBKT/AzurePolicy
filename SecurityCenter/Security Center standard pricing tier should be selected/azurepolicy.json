@@ -1,7 +1,6 @@
 {
   "properties": {
-    "displayName": "Bakkt - Security Center standard pricing tier should be selected",
-    "policyType": "Custom",
+    "displayName": "Security Center standard pricing tier should be selected",
     "mode": "All",
     "description": "The standard pricing tier enables threat detection for networks and virtual machines, providing threat intelligence, anomaly detection, and behavior analytics in Azure Security Center",
     "metadata": {
@@ -47,8 +46,5 @@
         "effect": "[parameters('effect')]"
       }
     }
-  },
-  "id": "/providers/Microsoft.Management/managementGroups/Bakkt-MG-SRE/providers/Microsoft.Authorization/policyDefinitions/ef63b5f1-36f6-42bd-8899-4bbf4f0fb399",
-  "type": "Microsoft.Authorization/policyDefinitions",
-  "name": "ef63b5f1-36f6-42bd-8899-4bbf4f0fb399"
+  }
 }
