@@ -1,54 +1,54 @@
 {
-    "properties": {
-      "displayName": "Bakkt - Security Center standard pricing tier should be selected",
-      "policyType": "Custom",
-      "mode": "All",
-      "description": "The standard pricing tier enables threat detection for networks and virtual machines, providing threat intelligence, anomaly detection, and behavior analytics in Azure Security Center",
-      "metadata": {
-        "category": "Security Center",
-        "createdBy": "a8a60687-52ce-4002-91f2-1cb96495566e",
-        "createdOn": "2021-02-25T18:49:40.1961297Z",
-        "updatedBy": null,
-        "updatedOn": null
-      },
-      "parameters": {
-        "effect": {
-          "type": "String",
-          "metadata": {
-            "displayName": "Effect",
-            "description": "Enable or disable the execution of the policy"
-          },
-          "allowedValues": [
-            "Audit",
-            "audit",
-            "Disabled"
-          ],
-          "defaultValue": "Audit"
-        }
-      },
-      "policyRule": {
-        "if": {
-          "allOf": [
-            {
-              "field": "type",
-              "equals": "Microsoft.Security/pricings"
-            },
-            {
-              "field": "Microsoft.Security/pricings/pricingTier",
-              "exists": "true"
-            },
-            {
-              "field": "Microsoft.Security/pricings/pricingTier",
-              "notEquals": "Standard"
-            }
-          ]
+  "properties": {
+    "displayName": "Bakkt - Security Center standard pricing tier should be selected",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "The standard pricing tier enables threat detection for networks and virtual machines, providing threat intelligence, anomaly detection, and behavior analytics in Azure Security Center",
+    "metadata": {
+      "category": "Security Center",
+      "createdBy": "a8a60687-52ce-4002-91f2-1cb96495566e",
+      "createdOn": "2021-02-25T18:49:40.1961297Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
         },
-        "then": {
-          "effect": "[parameters('effect')]"
-        }
+        "allowedValues": [
+          "Audit",
+          "audit",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
       }
     },
-    "id": "/providers/Microsoft.Management/managementGroups/Bakkt-MG-SRE/providers/Microsoft.Authorization/policyDefinitions/ef63b5f1-36f6-42bd-8899-4bbf4f0fb399",
-    "type": "Microsoft.Authorization/policyDefinitions",
-    "name": "ef63b5f1-36f6-42bd-8899-4bbf4f0fb399"
-  }
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "equals": "Microsoft.Security/pricings"
+          },
+          {
+            "field": "Microsoft.Security/pricings/pricingTier",
+            "exists": "true"
+          },
+          {
+            "field": "Microsoft.Security/pricings/pricingTier",
+            "notEquals": "Standard"
+          }
+        ]
+      },
+      "then": {
+        "effect": "[parameters('effect')]"
+      }
+    }
+  },
+  "id": "/providers/Microsoft.Management/managementGroups/Bakkt-MG-SRE/providers/Microsoft.Authorization/policyDefinitions/ef63b5f1-36f6-42bd-8899-4bbf4f0fb399",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "ef63b5f1-36f6-42bd-8899-4bbf4f0fb399"
+}

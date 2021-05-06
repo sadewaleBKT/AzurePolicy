@@ -3,8 +3,8 @@
 
 ## Try on Portal
 
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](<>)
-[![Deploy to Azure Gov](https://docs.microsoft.com/azure/governance/policy/media/deploy/deployGovbutton.png)](<>)
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://portal.azure.com/#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FsadewaleBKT%2FAzurePolicy%2Fmaster%2FSecurityCenter%2FSecurity%20Center%20standard%20pricing%20tier%20should%20be%20selected%2Fazurepolicy.json)
+[![Deploy to Azure Gov](https://docs.microsoft.com/azure/governance/policy/media/deploy/deployGovbutton.png)](https://portal.azure.us/?#blade/Microsoft_Azure_Policy/CreatePolicyDefinitionBlade/uri/https%3A%2F%2Fraw.githubusercontent.com%2FsadewaleBKT%2FAzurePolicy%2Fmaster%2FSecurityCenter%2FSecurity%20Center%20standard%20pricing%20tier%20should%20be%20selected%2Fazurepolicy.json)
 
 ## Try with PowerShell
 
