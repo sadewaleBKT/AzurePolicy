@@ -1,28 +1,15 @@
 {
   "properties": {
-    "displayName": "Security Center standard pricing tier should be selected",
+    "displayName": "Audit when a given service principal is assigned to the Key Vault data plane",
+    "description": "Audit when a specified AAD object is granted any permissions to secrets, certs, or keys stored in a Key Vault through data plane access policies.",
     "mode": "All",
-    "description": "The standard pricing tier enables threat detection for networks and virtual machines, providing threat intelligence, anomaly detection, and behavior analytics in Azure Security Center",
-    "metadata": {
-      "category": "Security Center",
-      "createdBy": "a8a60687-52ce-4002-91f2-1cb96495566e",
-      "createdOn": "2021-02-25T18:49:40.1961297Z",
-      "updatedBy": null,
-      "updatedOn": null
-    },
     "parameters": {
-      "effect": {
+      "aadObjectId": {
         "type": "String",
         "metadata": {
-          "displayName": "Effect",
-          "description": "Enable or disable the execution of the policy"
-        },
-        "allowedValues": [
-          "Audit",
-          "audit",
-          "Disabled"
-        ],
-        "defaultValue": "Audit"
+          "displayName": "AAD Object ID",
+          "description": "The objectId of the AAD user, group, or service principal to check."
+        }
       }
     },
     "policyRule": {
@@ -30,20 +17,18 @@
         "allOf": [
           {
             "field": "type",
-            "equals": "Microsoft.Security/pricings"
+            "equals": "Microsoft.KeyVault/vaults"
           },
           {
-            "field": "Microsoft.Security/pricings/pricingTier",
-            "exists": "true"
-          },
-          {
-            "field": "Microsoft.Security/pricings/pricingTier",
-            "notEquals": "Standard"
+            "not": {
+              "field": "Microsoft.Keyvault/vaults/accessPolicies[*].objectId",
+              "notEquals": "[parameters('aadObjectId')]"
+            }
           }
         ]
       },
       "then": {
-        "effect": "[parameters('effect')]"
+        "effect": "audit"
       }
     }
   }
